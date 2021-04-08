@@ -4,9 +4,9 @@ const app = express();
 const PORT = 8080;
 
 // Routes
-app.get('/notes', (req, res) => {
-    res.sendFile(path.join)
-})
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, `index.html`))
+});
 
 
 // Listener
