@@ -37,6 +37,7 @@ app.delete('/api/notes/:id', (req, res) => {
     let noteInput = fs.readFileSync(path.join(__dirname, './db/db.json'), 'utf-8');
     noteInput = JSON.parse(noteInput);
     // remove the note from the noteinput (the one with the matching id)  filter/splice function
+    fs.writeFileSync(path.join(__dirname, './db/db.json'), noteInput);
     // write the notes array back to the file (fs.writeFileSync) similar for delete
     res.json(noteInput);
 });
