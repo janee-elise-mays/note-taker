@@ -4,7 +4,7 @@ const fs = require('fs');
 const uuid = require('uuid').v4;
 
 const app = express();
-const PORT = 8080;
+const PORT = 8080; process.env.PORT || 8080;
 
 // Routes
 app.use(express.static(path.join(__dirname, 'public')))
