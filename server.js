@@ -5,8 +5,11 @@ const app = express();
 const PORT = 8080;
 
 // Routes
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
-app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, 'notes.html')));
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, './public/assets/index.html')));
+app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public/assets/notes.html')));
+
 
 
 // Listener
